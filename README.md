@@ -1,0 +1,67 @@
+# Versioned AIA reproducibility entry
+
+Download **mva_aia_reproducibility_v1.0.0.zip** from the [v1.0.0 release](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.0.0), extract it, and run `python verify_release.py` inside the extracted `mva_aia_reproducibility` directory.
+
+This repository hosts entry documents. The versioned ZIP contains the complete 412-file release tree, including the source snapshots, configurations, numerical records, manifests and verifier. Cloning the entry documents alone does not download that tree.
+
+# AIA: reproducibility artifacts for an MVA author-review manuscript
+
+Version: v1.0.0 (2026-09-26). The manuscript is being prepared for Machine
+Vision and Applications; this release does not imply submission, acceptance,
+or final approval by all manuscript authors.
+
+## Recompute all delivered numerical summaries
+
+Use Python 3.8 or newer, with its standard library only:
+
+```bash
+python verify_release.py
+```
+
+This checks the release hashes, recomputes the primary/StrawDI/peer summaries,
+the full-retraining summaries, and all six MinneApple outcomes. It also checks
+18,900 recorded paired batches (6,300 execution-path and 12,600 MinneApple).
+It requires no images, credentials, packages, network access or GPU.
+
+## Evidence and boundaries
+
+| Comparison | Paired AP difference (mean ± sample SD) | Scope |
+|---|---:|---|
+| Original AIA − BoxInst, M18K V1 | +1.3644 ± 0.0765 | Development validation; operational acquisition groups |
+| AIA − BoxInst, StrawDI | +0.1393 ± 0.4046 | Previously explored validation; 2/3 positive |
+| Optimized − newly retrained original AIA | +0.4081 ± 0.5944 | Three new paired runs; not strict equivalence |
+| AIA − BoxInst, MinneApple | −0.1973 ± 0.2099 | All three pairs negative; prior Test use disclosed |
+
+MinneApple BoxInst AP is 28.1526 ± 0.2857 and AIA AP is 27.9553 ± 0.1383.
+Lower common-support false coverage and NIS did not imply higher AP.
+All prescribed seeds, failed equivalence gates and negative outcomes are retained.
+NIS and completeness use separate matchers/supports; do not mix their values.
+Historical primary size-AP fields used box area; `mask_area_per_seed.csv`
+reports the separate true-mask-area audit. Full AP/AP50/AP75 were unchanged.
+
+## Contents
+
+- `primary/`: primary, subgroup, StrawDI, peer and cost evidence.
+- `full_retrain/`: original/optimized paired retraining evidence and sources.
+- `minneapple/`: frozen protocol, six results, per-instance/edge scores and sources.
+- `PROVENANCE.json`: original and released hashes with exact path-redaction mapping.
+- `environment_record.json`: recorded environment, not a new installation test.
+- `REPRODUCTION.md`: distinction between arithmetic reproduction and GPU reruns.
+- `RIGHTS.md` and `licenses/`: scoped rights and upstream notices.
+
+Source images/masks, model checkpoints, full prediction files, unpublished
+manuscript/author-review files and credentials are not included. Fetch source
+datasets through their providers under their terms. Frozen original artifacts
+remain locally archived; copies here replace local paths with `/WORKSPACE` or
+`/LOCAL_HOME`, so their historical embedded hashes describe the originals.
+Use `MANIFEST.json` to verify the public bytes. GPU reruns require dependency
+installation, provider data, weights, path relocation and fresh engineering
+checks; this release does not claim a turnkey or newly reproduced GPU run.
+
+The official MinneApple Test partition had already supported 12 evaluations
+in a separate project. Original M18K held-out images were not accessed in the
+present extensions. Fresh apple-domain training is not mushroom zero-shot
+transfer, pristine blind confirmation or proof of acquisition independence.
+
+For citation, use the repository release URL and exact commit recorded by GitHub.
+No DOI is assigned or implied. See `CITATION.md`.
