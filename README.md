@@ -1,5 +1,16 @@
 # Versioned AIA reproducibility entry
 
+## Releases
+
+| Version | Date | Contents |
+|---|---|---|
+| [v1.1.0](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.1.0) | 2026-10-02 | Delta to v1.0.0: AIA source at the commit bound by all later training rounds; code, run configurations, frozen protocols and numerical summaries of the scale-expansion, P2, pairwise-affinity veto and single-round stepwise rounds; Online Resource 2 of the manuscript; the author-confirmed v7 increment. Run `python verify_release.py` in the extracted `mva_aia_reproducibility_v1.1.0` directory. |
+| [v1.0.0](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.0.0) | 2026-09-26 | Original AIA evidence (primary, StrawDI, peer, full retraining, MinneApple). Described below. |
+
+Use v1.1.0 together with v1.0.0. Neither release implies submission, acceptance or peer review of the manuscript.
+
+## v1.0.0
+
 Download **mva_aia_reproducibility_v1.0.0.zip** from the [v1.0.0 release](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.0.0), extract it, and run `python verify_release.py` inside the extracted `mva_aia_reproducibility` directory.
 
 This repository hosts entry documents. The versioned ZIP contains the complete 412-file release tree, including the source snapshots, configurations, numerical records, manifests and verifier. Cloning the entry documents alone does not download that tree.
