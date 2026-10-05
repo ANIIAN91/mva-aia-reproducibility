@@ -4,11 +4,12 @@
 
 | Version | Date | Contents |
 |---|---|---|
+| [v1.2.1](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.2.1) | 2026-10-05 | Patch to v1.2.0: the current Online Resource 2 of the manuscript. Its data files are identical to the copy in v1.2.0; only its README changes (final article title). Run `python verify_release.py` in the extracted `mva_aia_reproducibility_v1.2.1` directory. |
 | [v1.2.0](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.2.0) | 2026-10-05 | Delta to v1.1.0: code, run configurations, frozen protocols and numerical summaries of the random-owner-point and same-experiment peer comparison, the four pipelines on StrawDI_Db1 and MinneApple, and the seed x acquisition-group resampling intervals; Online Resource 2 of the manuscript with these derived tables. Run `python verify_release.py` in the extracted `mva_aia_reproducibility_v1.2.0` directory. |
 | [v1.1.0](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.1.0) | 2026-10-02 | Delta to v1.0.0: AIA source at the commit bound by all later training rounds; code, run configurations, frozen protocols and numerical summaries of the scale-expansion, P2, pairwise-affinity veto and single-round stepwise rounds; Online Resource 2 of the manuscript; the author-confirmed v7 increment. Run `python verify_release.py` in the extracted `mva_aia_reproducibility_v1.1.0` directory. |
 | [v1.0.0](https://github.com/ANIIAN91/mva-aia-reproducibility/releases/tag/v1.0.0) | 2026-09-26 | Original AIA evidence (primary, StrawDI, peer, full retraining, MinneApple). Described below. |
 
-Use v1.2.0 and v1.1.0 together with v1.0.0. No release implies submission, acceptance or peer review of the manuscript.
+Use v1.2.1, v1.2.0 and v1.1.0 together with v1.0.0. No release implies submission, acceptance or peer review of the manuscript.
 
 ## v1.0.0
 
